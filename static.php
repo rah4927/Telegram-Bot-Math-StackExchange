@@ -9,15 +9,13 @@ $update = file_get_contents("php://input") ;
 
 
 $updateArray = json_decode($update, TRUE) ;
-
+print_r("$update") ;
 
 $chatId = $updateArray["result"][0]["message"]["chat"]["id"] ;
 $text = $updateArray["result"][0]["message"]["text"] ;
 
-if($text === "/hi")
-{
-  file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=test") ;
-}
+file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=test") ;
+
 ?>
 
 
