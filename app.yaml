@@ -4,3 +4,4 @@ api_version: 1
 handlers:
 - url: /.*
   script: static.php
+  secure: always
