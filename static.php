@@ -11,7 +11,7 @@ $update = file_get_contents("php://input");
 $updateArray = json_decode($update, TRUE) ;
 print_r($updateArray) ;
 
-$chatId = $updateArray["result"][0]["message"]["chat"]["id"] ;
+$chatId = $updateArray["message"]["chat"]["id"] ;
 
 
 file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=test") ;
