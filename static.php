@@ -9,7 +9,6 @@ $update = file_get_contents("php://input");
 
 
 $updateArray = json_decode($update, TRUE) ;
-print_r($updateArray) ;
 
 $chatId = $updateArray["message"]["chat"]["id"] ;
 $text =$updateArray["message"]["text"] ;
@@ -22,7 +21,7 @@ $topResult = $urlpostArray['items'][0]['link'];
 print_r($topResult) ;
 
 
-file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=$topresult") ;
+file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=$topResult") ;
 
 ?>
 
